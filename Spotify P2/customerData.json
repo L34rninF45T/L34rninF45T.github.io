@@ -1,0 +1,139 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "firstName": "Toni",
+      "lastName": "Harris",
+      "membershipLevel": "Gold",
+      "rewardsPoints": 320,
+      "growthLevel": "Rising Star",
+      "minutesListened": 2340,
+      "topGenre": "Indie Pop",
+      "savedSongs": 42,
+      "streak": 6,
+      "concertAttended": {
+        "artist": "The ACB’s",
+        "venue": "Irving Plaza, NY",
+        "date": "2025-04-23",
+        "pointsEarned": 50
+      },
+      
+      "topArtist": {
+        "name": "The ACB’s",
+        "favoriteSong": "Be Professional",
+        "image": "./images/TheACBsBeProfessional.png",
+        "spotifyLink": "https://open.spotify.com/track/0m3lfmGb4qc50CZ9KVp37d"
+      },
+     
+      "topSongs": [
+        {
+          "title": "Brand New Dance",
+          "artist": "Eminem",
+          "image": "./images/BNDEm.png",
+          "spotifyLink": "https://open.spotify.com/track/77pfjsq0gSZwO8bYVTVROo"
+        },
+        {
+          "title": "Reincarnated",
+          "artist": "Kendrick Lamar",
+          "image": "./images/reincarnatedKDot.png",
+          "spotifyLink": "https://open.spotify.com/track/0RgjEkSbeuStKfT2Pa4Zai"
+        },
+        {
+          "title": "Call You Up",
+          "artist": "Viola Beach",
+          "image": "./images/CallYouUp.png",
+          "spotifyLink": "https://open.spotify.com/track/4txVk9tTCqGHt60ozIkj7Y"
+        },
+        {
+          "title": "Sometimes",
+          "artist": "Gigi Perez",
+          "image": "./images/GigiSometimes.png",
+          "spotifyLink": "https://open.spotify.com/track/1ElGmhauttS9p7LwmHG9uM"
+        }
+      ],
+      
+      "recommendedArtist": {
+        "name": "Summer Walker",
+        "image": "./images/SummerWalker.jpg",
+        "songs": [
+          {
+            "image": "./images/SummerWalkerSession32.png",
+            "spotifyLink": "https://open.spotify.com/track/2ktg2oZDyFAX3iY1QNkXl5"
+          },
+          {
+            "image": "./images/SWRiot.png",
+            "spotifyLink": "https://open.spotify.com/track/4qQVKOnZEYWZIHUMRapsVO"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "firstName": "Lisa",
+      "lastName": "James",
+      "membershipLevel": "Silver",
+      "rewardsPoints": 210,
+      "growthLevel": "Steady Listener",
+      "minutesListened": 1700,
+      "topGenre": "Hip Hop",
+      "savedSongs": 29,
+      "streak": 2,
+      "concertAttended": {
+        "artist": "Atmosphere",
+        "venue": "Penn’s Peak, Jim Thorpe",
+        "date": "2025-02-14",
+        "pointsEarned": 40
+      },
+      
+      
+      "topArtist": {
+        "name": "Atmosphere",
+        "favoriteSong": "Trying to Find a Balance",
+        "image": "./images/AtmosphereYouTopArtist.png",
+        "spotifyLink": "https://open.spotify.com/track/7aH17Z1Hnyv2PVQ91P9xIn"
+      },
+      
+      "topSongs": [
+        {
+          "title": "Bedroom Walls",
+          "artist": "Banks",
+          "image": "./images/BedroomWallsBanks.png",
+          "spotifyLink": "https://open.spotify.com/track/1fALdCEZ88NUQ6oftPIyg2"
+        },
+        {
+          "title": "Playboy",
+          "artist": "Tiny Tomboy",
+          "image": "./images/PlayboyTinyTomboy.png",
+          "spotifyLink": "https://open.spotify.com/track/0fwBUEhqhFW85jsxB5yROz"
+        },
+        {
+          "title": "Glory Box",
+          "artist": "Portishead",
+          "image": "./images/GloryboxPortishead.jpg.png",
+          "spotifyLink": "https://open.spotify.com/track/3Ty7OTBNSigGEpeW2PqcsC"
+        },
+        {
+          "title": "Intruders",
+          "artist": "Jessie Reyes",
+          "image": "./images/IntrudersJessieReyes.png",
+          "spotifyLink": "https://open.spotify.com/track/5dWtSsXTOn5uQzMVMv2X3j"
+        }
+      ],
+      
+      "recommendedArtist": {
+        "name": "Aesop Rock",
+        "image": "./images/AesopRock.jpg",
+        "songs": [
+          {
+            "image": "./images/NonShallPassAesopRock.png",
+            "spotifyLink": "https://open.spotify.com/track/207jvv3SLF6CGhVW2gOanq"
+          },
+          {
+            "image": "./images/NoRegretsAesopRock.png",
+            "spotifyLink": "https://open.spotify.com/track/1JTgo9I0h9hPegqFRJVNzV"
+          }
+        ]
+      }
+    }
+  ]
+}

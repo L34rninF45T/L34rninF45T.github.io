@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="./dynamicContent.js"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handyman Supes Thanks You!</title>
+  <style>
+    /* General Styles */
+    body {
+     
+      background-color: black;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Button Styles */
+    .btn {
+      display: inline-block;
+      background-color: #000000;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 16px 28px;
+      border-radius: 50px;
+    }
+
+    .btn:hover {
+      background-color: #333333;
+      color: #ff4f5e;
+    }
+
+    /* Responsive Styles */
+    @media only screen and (max-width: 600px) {
+      table {
+        width: 100% !important;
+      }
+
+      td {
+        padding: 10px !important;
+      }
+
+      img {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      .btn {
+        font-size: 14px !important;
+        padding: 10px 20px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Wrapper Table -->
+  <table align="center" width="100%" bgcolor="#b51a00" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td align="center">
+
+        <!-- Main Content Table -->
+        <table width="600" bgcolor="#b51a00" cellpadding="20" cellspacing="0" border="0" style="border-radius:10px;">
+        <!-- REMOVE THIS BEFORE ESP UPLOAD -->
+          <tr>
+            <td align="center">
+              <button id="switchCustomerBtn" style="background:#222; color:white; padding:10px 20px; border:none; border-radius:5px; cursor:pointer;">
+                Switch Customer
+              </button>
+            </td>
+          </tr>  
+          
+
+          <!-- Hero Image -->
+          <tr>
+            <td align="center">
+              <img src="./Images/HS2.png" alt="Handyman Supes" width="560" style="border-radius:10px;">
+            </td>
+          </tr>
+
+          <!-- Header -->
+          <tr>
+            <td align="center" style="font-size:28px; font-weight:bold; text-decoration:underline;">
+              Handyman Supes Thanks You ★
+            </td>
+          </tr>
+
+          
+          
+          <tr>
+            <td align="left" style="font-size:16px; line-height:1.6;">
+              
+              <!-- Smaller Text -->
+              <p>Thank you for your recent purchase, <strong id="customerName">cust</strong>!</p>
+              <p>We noticed your last purchase was on <strong id="lastPurchase">[Last Purchase Date]</strong>.</p>
+              <p>As a <strong id="membershipLevel">[Membership Level]</strong> member, you get exclusive benefits.</p>
+
+
+          
+              <!-- Thank You Message -->
+              <p>Thank you for choosing Handyman Supes! We appreciate the opportunity to serve you and hope you're happy with the results of your recent service.</p>
+
+              <!-- Soft Ask for Review -->
+              <p>Your feedback means the world to us—it helps us continue to provide top-tier service. If you had a great experience, we'd love to hear about it!</p>
+
+              <p>Would you take a moment to leave us a quick review?</p>
+
+             <!-- CTAs -->
+              <p style="text-align:center;">
+                <a href="https://forms.gle/YaPabpnBZk5VQoaY8" class="btn" target="_blank">Leave a Glowing Review Here</a>
+              </p>
+
+              <p>If you have any thoughts on how we can improve, we’d appreciate your insights in our short survey.</p>
+
+              <p style="text-align:center;">
+                <a href="https://forms.gle/S5VZktwdhKnKu1586" class="btn" target="_blank">Tell us your Thoughts Here</a>
+              </p>
+
+           <!-- Closing Line -->
+             <p>Thank you again for trusting us with your home improvements. We look forward to serving you in the future!</p>
+
+             <p><strong>- The Handyman Supes Team</strong></p>
+
+            </td>
+          </tr>
+          
+
+          <!-- Signature -->
+          <tr>
+            <td align="center" style="font-size:20px; font-weight:bold;">
+              Kind regards, <br>
+              <span style="color:#ff4f5e;">Handyman Supes ★</span>
+            </td>
+          </tr>
+
+          <!-- Call to Action -->
+          <tr>
+            <td align="center">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSeyySbzUgDEjcjPeidenFcw7uS0P6nsCIo2bQtfqtJ59PRfOQ/viewform?usp=dialog" class="btn" target="_blank">Start Survey</a>
+            </td>
+          </tr>
+
+          <!-- Social Media Links -->
+          <tr>
+            <td align="center">
+              <p style="font-size:14px; color:#fff;">Follow Us:</p>
+              <a href="https://facebook.com/HandymanSupes" target="_blank">
+                <img src="./Images/facebook.png" width="40"  alt="Facebook">
+              </a>
+              <a href="https://instagram.com/HandymanSupes" target="_blank">
+                <img src="./Images/instagram.png" width="40"  alt="Instagram">
+              </a>
+              <a href="https://x.com/HandymanSupes" target="_blank">
+                <img src="./Images/twitter.png" width="40"  alt="Twitter">
+              </a>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td align="center" style="font-size:12px; color:#fff; padding:10px;">
+              <p>&copy; 2024 Handyman Supes. All Rights Reserved.</p>
+              <p>Contact: <a href="mailto:Nocomplaints4Supes@Gmail.com" style="color:white;">Nocomplaints4Supes@Gmail.com</a></p>
+              <p>You can <a href="https://yourwebsite.com/profile" style="color:white;">update your preferences</a> or 
+                <a href="https://yourwebsite.com/unsubscribe" style="color:white;">unsubscribe</a>.</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

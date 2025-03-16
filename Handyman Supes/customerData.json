@@ -1,0 +1,26 @@
+{
+    "customers": [
+      {
+        "firstName": "Toni",
+        "lastName": "Harris",
+        "email": "toni.h@email.com",
+        "lastPurchaseDate": "2025-02-11",
+        "membershipLevel": "Gold"
+      },
+      {
+        "firstName": "Lisa",
+        "lastName": "James",
+        "email": "lisa.j@email.com",
+        "lastPurchaseDate": "2025-02-10",
+        "membershipLevel": "Silver"
+      },
+      {
+        "firstName": "Jessica",
+        "lastName": "Ashley",
+        "email": "Jessa@email.com",
+        "lastPurchaseDate": "2024-01-02",
+        "membershipLevel": "Silver"
+      }
+    ]
+  }
+  
