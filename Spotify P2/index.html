@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify Rewards & Your Stats</title>
+  <style type="text/css">
+    /* Global Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      font-family: Helvetica, Arial, sans-serif;
+      color: white;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Card Container for Sections */
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    /* Section Title */
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    
+    /* Banner Styles */
+    .banner {
+      background-color: #1DB954;
+      border-radius: 10px;
+      padding: 10px;
+    }
+    .banner-logo {
+      width: 60px;
+    }
+    .banner-info {
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    /* Button Styles */
+    .btn {
+      background-color: #000;
+      color: #1DB954;
+      border: 1px solid #1DB954;
+      border-radius: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 12px;
+      white-space: nowrap;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #333;
+    }
+    
+    /* Concert Section */
+    .concert {
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    
+    /* YOUR #1 SONG (BIG CARD) */
+    .top-track {
+      background-color: #1DB954;
+      border-radius: 10px;
+      text-align: center;
+      color: black;
+    }
+    .top-track-img {
+      width: 160px;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+    .top-track-artist {
+      font-size: 18px;
+      margin: 5px 0;
+      font-weight: bold;
+    }
+    .top-track-title {
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+    }
+    
+    /* Other Top Songs */
+    .other-songs {
+      background-color: #1DB954;
+      border-radius: 10px;
+      color: black;
+      text-align: center;
+    }
+    .song-img {
+      border-radius: 10px;
+      margin: 5px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .song-other {
+      width: 120px;
+    }
+    
+    /* Stats Section */
+    .stats {
+      background-color: #000;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 16px;
+      color: white;
+    }
+    .stats td {
+      border: 1px solid #1DB954;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+    }
+    
+    /* Recommended Artist */
+    .recommended {
+      background-color: #1DB954;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      color: black;
+    }
+    .rec-artist-img, .rec-song-img {
+      border-radius: 10px;
+      margin: 5px;
+    }
+    .rec-artist-img {
+      width: 130px;
+    }
+    .rec-song-img {
+      width: 120px;
+    }
+    
+    /* Footer */
+    .footer {
+      color: gray;
+      font-size: 12px;
+      text-align: center;
+      padding: 20px 0;
+      background-color: #121212;
+      border-radius: 10px;
+    }
+    
+    /* Responsive Design */
+    @media only screen and (max-width: 600px) {
+      .banner-logo {
+        width: 50px;
+      }
+      .top-track-img {
+        width: 140px;
+      }
+      .song-other {
+        width: 100px;
+      }
+      .card {
+        margin: 10px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- BANNER SECTION -->
+  <table class="card banner">
+    <tr>
+      <td width="60" align="left">
+        <img src="./images/Logo.png" alt="Spotify Logo" class="banner-logo">
+      </td>
+      <td align="center" class="banner-info">
+        🎧 Membership: <span id="membershipLevel"></span> | 
+        ⭐ Points: <span id="rewardsPoints"></span> | 
+        📈 Growth: <span id="growthLevel"></span>
+      </td>
+      <td width="140" align="right">
+        <a id="switchCustomerBtn" class="btn" href="#">Switch Customer</a>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- CONCERT MENTION SECTION -->
+  <table class="card concert">
+    <tr>
+      <td id="concertMention" style="background-color: #121212;"></td>
+    </tr>
+  </table>
+  
+  <!-- YOUR #1 SONG (BIG CARD) -->
+  <table class="card top-track">
+    <tr>
+      <td align="center">
+        <a id="topTrackLink" href="#" target="_blank">
+          <img id="topTrackImage" class="top-track-img" src="" alt="Your #1 Song">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <div id="topTrackArtist" class="top-track-artist"></div>
+        <div id="topTrackTitle" class="top-track-title"></div>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- YOUR OTHER TOP SONGS -->
+  <table class="card other-songs">
+    <tr>
+      <td class="section-title">Your Other Top Songs</td>
+    </tr>
+    <tr>
+      <td align="center">
+        <table align="center">
+          <tr>
+            <td align="center">
+              <a id="song1Link" href="#" target="_blank">
+                <img id="song1Image" class="song-img song-other" src="" alt="Song 1">
+              </a>
+            </td>
+            <td align="center">
+              <a id="song2Link" href="#" target="_blank">
+                <img id="song2Image" class="song-img song-other" src="" alt="Song 2">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <a id="song3Link" href="#" target="_blank">
+                <img id="song3Image" class="song-img song-other" src="" alt="Song 3">
+              </a>
+            </td>
+            <td align="center">
+              <a id="song4Link" href="#" target="_blank">
+                <img id="song4Image" class="song-img song-other" src="" alt="Song 4">
+              </a>
+            </td>
+          </tr>
+          <!-- Optional 5th Song Row -->
+          <tr id="song5Row" style="display:none;">
+            <td colspan="2" align="center">
+              <a id="song5Link" href="#" target="_blank">
+                <img id="song5Image" class="song-img song-other" src="" alt="Song 5">
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- STATS SECTION -->
+  <table class="card stats">
+    <tr>
+      <td width="50%">Minutes Listened:<br><span id="minutesListened"></span></td>
+      <td width="50%">Top Genre:<br><span id="topGenre"></span></td>
+    </tr>
+    <tr>
+      <td>Saved Songs:<br><span id="savedSongs"></span></td>
+      <td>Streak:<br><span id="streak"></span> weeks</td>
+    </tr>
+  </table>
+  
+  <!-- RECOMMENDED ARTIST SECTION -->
+  <table class="card recommended">
+    <tr>
+      <td colspan="2" class="section-title">
+        We think you'll love <span id="recommendedArtistName"></span>!
+      </td>
+    </tr>
+    <tr>
+      <td width="200" align="center">
+        <a id="recommendedArtistLink" href="#" target="_blank">
+          <img id="recommendedArtistImage" class="rec-artist-img" src="" alt="Recommended Artist">
+        </a>
+      </td>
+      <td align="center">
+        <table>
+          <tr>
+            <td align="center">
+              <a id="recSong1Link" href="#" target="_blank">
+                <img id="recSong1Image" class="rec-song-img" src="" alt="Rec Song 1">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <a id="recSong2Link" href="#" target="_blank">
+                <img id="recSong2Image" class="rec-song-img" src="" alt="Rec Song 2">
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- FOOTER SECTION -->
+  <table class="card footer">
+    <tr>
+      <td align="center">
+        <p>Spotify USA Inc, 4 World Trade Center, New York, NY</p>
+        <p>
+          <a id="unsubscribe" href="#" style="color:gray;">Unsubscribe</a> | 
+          <a id="contactSupport" href="#" style="color:gray;">Contact Support</a>
+        </p>
+      </td>
+    </tr>
+  </table>
+  
+  <!-- JavaScript: Populate with JSON Data -->
+  <script type="text/javascript">
+    var currentCustomerIndex = 0;
+    
+    function updateCustomerInfo(data) {
+      var customer = data.customers[currentCustomerIndex];
+      
+      // BANNER
+      document.getElementById('membershipLevel').textContent = customer.membershipLevel;
+      document.getElementById('rewardsPoints').textContent   = customer.rewardsPoints;
+      document.getElementById('growthLevel').textContent     = customer.growthLevel;
+      
+      // CONCERT MENTION
+      var c = customer.concertAttended;
+      document.getElementById('concertMention').innerHTML =
+        "Thanks for attending " + c.artist + " on " + c.date + " at " + c.venue +
+        "! You earned " + c.pointsEarned + " points. Check out your #1 song below!";
+      
+      // YOUR #1 SONG
+      document.getElementById('topTrackArtist').textContent  = customer.topArtist.name;
+      document.getElementById('topTrackTitle').textContent   = customer.topArtist.favoriteSong;
+      document.getElementById('topTrackLink').href           = customer.topArtist.spotifyLink;
+      document.getElementById('topTrackImage').src           = customer.topArtist.image;
+      
+      // OTHER TOP SONGS
+      document.getElementById('song1Link').href  = customer.topSongs[0].spotifyLink;
+      document.getElementById('song1Image').src  = customer.topSongs[0].image;
+      document.getElementById('song2Link').href  = customer.topSongs[1].spotifyLink;
+      document.getElementById('song2Image').src  = customer.topSongs[1].image;
+      document.getElementById('song3Link').href  = customer.topSongs[2].spotifyLink;
+      document.getElementById('song3Image').src  = customer.topSongs[2].image;
+      document.getElementById('song4Link').href  = customer.topSongs[3].spotifyLink;
+      document.getElementById('song4Image').src  = customer.topSongs[3].image;
+      
+      // 5th Song (If Exists)
+      if (customer.topSongs.length > 4) {
+        document.getElementById('song5Link').href  = customer.topSongs[4].spotifyLink;
+        document.getElementById('song5Image').src  = customer.topSongs[4].image;
+        document.getElementById('song5Row').style.display = '';
+      } else {
+        document.getElementById('song5Row').style.display = 'none';
+      }
+      
+      // STATS
+      document.getElementById('minutesListened').textContent = customer.minutesListened;
+      document.getElementById('topGenre').textContent        = customer.topGenre;
+      document.getElementById('savedSongs').textContent      = customer.savedSongs;
+      document.getElementById('streak').textContent          = customer.streak;
+      
+      // RECOMMENDED ARTIST
+      document.getElementById('recommendedArtistName').textContent = customer.recommendedArtist.name;
+      document.getElementById('recommendedArtistLink').href        = customer.recommendedArtist.songs[0].spotifyLink;
+      document.getElementById('recommendedArtistImage').src        = customer.recommendedArtist.image;
+      document.getElementById('recSong1Link').href = customer.recommendedArtist.songs[0].spotifyLink;
+      document.getElementById('recSong1Image').src = customer.recommendedArtist.songs[0].image;
+      document.getElementById('recSong2Link').href = customer.recommendedArtist.songs[1].spotifyLink;
+      document.getElementById('recSong2Image').src = customer.recommendedArtist.songs[1].image;
+    }
+    
+    // FETCH JSON & INIT
+    fetch('./customerData.json')
+      .then(function(res){ return res.json(); })
+      .then(function(data){
+        updateCustomerInfo(data);
+        document.getElementById('switchCustomerBtn').addEventListener('click', function(){
+          currentCustomerIndex = (currentCustomerIndex + 1) % data.customers.length;
+          updateCustomerInfo(data);
+        });
+      })
+      .catch(function(err){ console.error('Error loading JSON:', err); });
+  </script>
+</body>
+</html>
