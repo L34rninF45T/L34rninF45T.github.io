@@ -1,0 +1,212 @@
+from IPython.display import display, HTML
+
+html_with_assets = """
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>REEper’s 🪓 Transmission</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Creepster&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0a0a0a;
+      font-family: 'Creepster', cursive;
+      color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    }
+
+    .container {
+      max-width: 680px;
+      margin: auto;
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.92);
+      box-shadow: 0 0 30px #e63946;
+    }
+
+    h1, h2 {
+      font-family: 'Nosifer', cursive;
+      text-align: center;
+      color: #e63946;
+      text-shadow: 0 0 3px #000, 0 0 10px #ff0033, 0 0 20px #e63946;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 40px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-family: 'Creepster', cursive;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .movie-block {
+      border: 1px solid #e63946;
+      padding: 20px;
+      margin: 20px 0;
+      background-color: #1a1a1a;
+      box-shadow: inset 0 0 12px #440000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .movie-block:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 15px #ff0033, 0 0 30px #e63946;
+    }
+
+    .movie-block h3 {
+      margin-top: 0;
+      color: #e63946;
+      font-family: 'Nosifer', cursive;
+      font-size: 20px;
+      text-shadow: 0 0 3px #000, 0 0 6px #e63946;
+    }
+
+    .cta {
+      display: block;
+      text-align: center;
+      margin: 30px auto;
+      padding: 14px 28px;
+      background-color: #e63946;
+      color: #fff;
+      font-family: 'Nosifer', cursive;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-radius: 6px;
+      width: fit-content;
+      box-shadow: 0 0 8px #000, 0 0 24px #ff0033;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .cta:hover {
+      background-color: #ff0033;
+      color: #111;
+      box-shadow: 0 0 12px #fff, 0 0 30px #ff0033;
+      cursor: pointer;
+    }
+
+    .highlight {
+      background-color: #000;
+      padding: 14px;
+      color: #f2f2f2;
+      border-left: 4px solid #e63946;
+      font-style: italic;
+      margin-top: 20px;
+      box-shadow: inset 0 0 10px #440000;
+    }
+
+    .campaign-block {
+      background-color: #121212;
+      border-left: 5px solid #e63946;
+      padding: 24px;
+      margin-top: 40px;
+      box-shadow: inset 0 0 12px #330000;
+    }
+
+    .signoff {
+      font-style: italic;
+      text-align: center;
+      color: #aaa;
+      margin-top: 60px;
+      font-family: 'Creepster', cursive;
+    }
+
+    .footer {
+      font-size: 12px;
+      color: #666;
+      text-align: center;
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+    }
+
+    img.header-img, img.asset {
+      width: 100%;
+      margin: 30px 0;
+      border-radius: 4px;
+      box-shadow: 0 0 15px #e63946;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <img class="header-img" src="https://i.imgur.com/cKULKVu.png" alt="Found Header" />
+    <h1>REEper’s 🪓 Transmission</h1>
+    <p style="text-align: center;">This ain't your average newsletter. It's August. It's bloody. It's crawling with tape hiss, dead links, and cursed footage. Buckle up.</p>
+
+    <div class="section">
+      <h2>🩸 August Horrors — Streaming Now</h2>
+      <img class="asset" src="https://i.imgur.com/3GPHgrl.jpeg" alt="August New Movies" />
+
+      <div class="movie-block">
+        <h3>The Ghost of Jim Bray (2025)</h3>
+        <p>A man vlogs his descent into madness… or possession. The footage you're watching? He never uploaded it himself.</p>
+      </div>
+
+      <div class="movie-block">
+        <h3>The Ouija Experiment (2011)</h3>
+        <p>A cheap Ouija board. Five friends. One spirit that didn’t want to leave. The tapes never made it to the police… but they made it to us.</p>
+      </div>
+
+      <div class="movie-block">
+        <h3>Yamidouga 2 & 3 (2012)</h3>
+        <p>Analog dread at its rawest. Two entries in a cursed Japanese series. These are uncut, untranslated, and absolutely not for daytime viewing.</p>
+      </div>
+
+      <div class="movie-block">
+        <h3>Taped Up Memories (2023)</h3>
+        <p>Recovered from the side of an English road near a murder scene. No edits. No narration. Just the tape. Watch what the police refused to release.</p>
+      </div>
+
+      <a href="https://www.foundtv.com" class="cta">Stream the Blood Now</a>
+    </div>
+
+    <div class="section">
+      <h2>📼 Be Part of a FOUND Original</h2>
+      <img class="asset" src="https://i.imgur.com/ohuiJz7.jpeg" alt="Be a part of making a Found Original" />
+      <div class="campaign-block">
+        <p>We're raising spirits — and funds — for <strong>A Possession in Lincoln County</strong>. Grab the DVD/Blu-ray before the campaign ends.</p>
+        <div class="highlight">
+          Only 500 copies will ever exist. This isn't just a collector’s item — it’s a passport to behind-the-scenes horror, early screenings, and creative input. Don’t just watch the film. Help conjure it.
+        </div>
+        <a class="cta" href="#">Snag the Disc Before Midnight</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>👾 TAG You’re Dead — Game Drop</h2>
+      <img class="asset" src="https://i.imgur.com/DdvARqD.png" alt="/demo_n Game Preview" />
+      <p>Friday. Steam. /demo_n is loose again. You run. It chases. You die. Retro visuals, live streams, and hidden dev files you probably shouldn’t open...</p>
+    </div>
+
+    <div class="section">
+      <h2>🎙️ Creator Spotlight: Pretty Killer Podcast</h2>
+      <img class="asset" src="https://i.imgur.com/twYN5o4.jpeg" alt="Pretty Killer Podcast" />
+      <p>Hosted by Jordana. Top 10 horror picks. Found footage freak? You’ll feel seen. Listen if you dare: <strong>@prettykillerpodcast</strong></p>
+    </div>
+
+    <div class="signoff">
+      That’s all for this month's transmission.<br>
+      But the static’s never really gone.<br><br>
+      — REEper
+    </div>
+
+    <div class="footer">
+      You received this message because you opened the wrong drawer.<br>
+      Unsubscribe? Sure… if you think that stops anything.
+    </div>
+  </div>
+</body>
+</html>
+"""
+
+display(HTML(html_with_assets))
