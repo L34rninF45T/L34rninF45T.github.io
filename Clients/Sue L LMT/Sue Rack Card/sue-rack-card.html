@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sue Long LMT Rack Card</title>
+
+  <!-- Elegant fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: 4in 9in;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 4in;
+      height: 9in;
+      background: #1d2740;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .outer {
+      width: 4in;
+      height: 9in;
+      background: #dce6d6;
+      padding: 0.16in;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      background: #f7f4ef;
+      border-radius: 0.18in;
+      overflow: hidden;
+      padding: 0.26in 0.24in 0.18in 0.24in;
+      position: relative;
+      text-align: center;
+      color: #6f866f;
+    }
+
+    .headshot {
+      width: 1.12in;
+      height: 1.12in;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 0.14in auto;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .logo {
+      width: 1.5in;
+      max-height: 0.9in;
+      object-fit: contain;
+      display: block;
+      margin: 0.02in auto 0.04in auto;
+    }
+
+    .script-name {
+      font-family: 'Great Vibes', cursive;
+      font-size: 0.34in;
+      line-height: 1;
+      color: #7b927a;
+      margin: 0;
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.18in;
+      letter-spacing: 0.01in;
+      color: #6d846c;
+      margin-top: 0.04in;
+      margin-bottom: 0.14in;
+    }
+
+    .headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.34in;
+      line-height: 1.02;
+      font-weight: 500;
+      color: #6f866f;
+      margin: 0.06in 0 0.08in 0;
+    }
+
+    .divider {
+      width: 82%;
+      margin: 0 auto 0.08in auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.08in;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #adc0a8;
+    }
+
+    .divider-icon {
+      font-size: 0.16in;
+      color: #94aa8f;
+      line-height: 1;
+    }
+
+    .subcopy {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.16in;
+      line-height: 1.3;
+      color: #748974;
+      margin: 0 auto 0.1in auto;
+      width: 90%;
+    }
+
+    .benefits {
+      list-style: none;
+      margin: 0 auto 0.14in auto;
+      padding: 0;
+      width: 78%;
+    }
+
+    .benefits li {
+      font-size: 0.145in;
+      line-height: 1.45;
+      color: #738873;
+      margin: 0.02in 0;
+      position: relative;
+      padding-left: 0.14in;
+      text-align: left;
+    }
+
+    .benefits li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #7e967d;
+      font-size: 0.16in;
+      line-height: 1;
+    }
+
+    .qr-wrap {
+      margin: 0.06in 0 0.08in 0;
+    }
+
+    .qr {
+      width: 1.72in;
+      height: 1.72in;
+      object-fit: contain;
+      background: #fff;
+      padding: 0.04in;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .scan-line-1 {
+      font-size: 0.13in;
+      color: #7a8e79;
+      margin-top: 0.08in;
+      line-height: 1.25;
+    }
+
+    .scan-line-2 {
+      font-size: 0.11in;
+      color: #90a08e;
+      margin-top: 0.03in;
+      line-height: 1.25;
+    }
+
+    .contact-section {
+      margin-top: 0.12in;
+    }
+
+    .contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.17in;
+      color: #6f866f;
+      margin: 0.04in 0 0.05in 0;
+      font-weight: 500;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.08in;
+      flex-wrap: wrap;
+      font-size: 0.11in;
+      color: #6f866f;
+      line-height: 1.35;
+      margin-bottom: 0.06in;
+    }
+
+    .ig-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.05in;
+      padding: 0.055in 0.14in;
+      border-radius: 999px;
+      border: 1px solid #8ea28d;
+      color: #6c836b;
+      background: transparent;
+      font-size: 0.11in;
+      min-width: 1.28in;
+    }
+
+    .ig-icon {
+      width: 0.15in;
+      height: 0.15in;
+      display: inline-block;
+      border: 1.4px solid #7f967e;
+      border-radius: 4px;
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .ig-icon::before {
+      content: "";
+      position: absolute;
+      width: 0.055in;
+      height: 0.055in;
+      border: 1.4px solid #7f967e;
+      border-radius: 50%;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ig-icon::after {
+      content: "";
+      position: absolute;
+      width: 0.022in;
+      height: 0.022in;
+      background: #7f967e;
+      border-radius: 50%;
+      right: 0.02in;
+      top: 0.02in;
+    }
+
+    .email-line {
+      font-size: 0.105in;
+      color: #6f866f;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0.07in;
+      left: 0.24in;
+      right: 0.24in;
+      text-align: center;
+      font-size: 0.08in;
+      color: #9aac98;
+      letter-spacing: 0.01in;
+    }
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <div class="card">
+
+      <img class="headshot" src="Sue headshot.png" alt="Sue Long, LMT" />
+
+      <img class="logo" src="SueLongLOGO.png" alt="Sue Long LMT logo" />
+
+      <div class="tagline">Relax • Restore • Rebalance</div>
+
+      <h1 class="headline">Join Sue’s VIP Wellness List</h1>
+
+      <div class="divider">
+        <span class="divider-icon">✿</span>
+      </div>
+
+      <p class="subcopy">
+        Before your next visit,<br>
+        scan to stay connected.
+      </p>
+
+      <ul class="benefits">
+        <li>Wellness tips</li>
+        <li>Appointment updates</li>
+        <li>Self-care inspiration</li>
+      </ul>
+
+      <div class="qr-wrap">
+        <img class="qr" src="qr-code.png" alt="Sue Long VIP Wellness List QR code" />
+      </div>
+
+      <div class="scan-line-1">Scan with your phone camera</div>
+      <div class="scan-line-2">Stay connected with Sue Long, LMT</div>
+
+      <div class="contact-section">
+        <div class="divider">
+          <span class="divider-icon">✿</span>
+        </div>
+        <div class="contact-title">Contact &amp; Connect</div>
+
+        <div class="contact-row">
+          <div class="ig-pill">
+            <span class="ig-icon"></span>
+            <span>@SueLongLMT</span>
+          </div>
+        </div>
+
+        <div class="email-line">hello@massageatbalance.com</div>
+      </div>
+
+      <div class="footer">Powered by MaxAmp Marketing</div>
+
+    </div>
+  </div>
+</body>
+</html>

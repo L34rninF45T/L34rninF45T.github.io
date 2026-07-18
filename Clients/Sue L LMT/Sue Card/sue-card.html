@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sue Long LMT Business Card</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    @page {
+      size: 3.5in 2in;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #20242c;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: "Libre Baskerville", Georgia, serif;
+      color: #425f45;
+    }
+
+    .card {
+      width: 3.5in;
+      height: 2in;
+      background: #f8f5ee;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .inner {
+      position: absolute;
+      inset: 0.06in;
+      border: 1.2px solid #788c73;
+      border-radius: 0.14in;
+      background: radial-gradient(circle at center, #fffdf8 0%, #f8f4ec 72%, #eee8dc 100%);
+      overflow: hidden;
+    }
+
+    .inner::before {
+      content: "";
+      position: absolute;
+      inset: 0.025in;
+      border: 0.7px solid rgba(120, 140, 115, 0.58);
+      border-radius: 0.115in;
+      pointer-events: none;
+    }
+
+    .powered {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0.045in;
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.072in;
+      font-style: italic;
+      color: #657a61;
+      letter-spacing: 0.003in;
+    }
+
+    .divider {
+      height: 1px;
+      background: #9cab95;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .divider::after {
+      content: "✦";
+      position: absolute;
+      left: 50%;
+      top: -0.057in;
+      transform: translateX(-50%);
+      background: #f8f4ec;
+      color: #7f937b;
+      font-size: 0.06in;
+      padding: 0 0.045in;
+    }
+
+    /* FRONT */
+
+    .front .photo {
+      position: absolute;
+      top: 0.11in;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0.56in;
+      height: 0.56in;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.1px solid #7b9077;
+      background: #f8f4ec;
+      z-index: 5;
+    }
+
+    .front .logo-left,
+    .front .logo-right {
+      position: absolute;
+      top: 0.19in;
+      width: 0.86in;
+      opacity: 0.45;
+      z-index: 1;
+    }
+
+    .front .logo-left {
+      left: 0.47in;
+      transform: rotate(-2deg);
+    }
+
+    .front .logo-right {
+      right: 0.47in;
+      transform: scaleX(-1) rotate(-2deg);
+    }
+
+    .front .name {
+      position: absolute;
+      top: 0.70in;
+      left: 0.16in;
+      right: 0.16in;
+      margin: 0;
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.37in;
+      line-height: 0.82;
+      font-weight: 500;
+      color: #314f35;
+      letter-spacing: 0.008in;
+    }
+
+    .front .cred {
+      font-size: 0.115in;
+      letter-spacing: 0.016in;
+      margin-left: 0.035in;
+      vertical-align: 0.045in;
+    }
+
+    .front .name-divider {
+      position: absolute;
+      top: 1.02in;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.25in;
+    }
+
+    .front .script {
+      position: absolute;
+      top: 1.10in;
+      left: 0.16in;
+      right: 0.16in;
+      text-align: center;
+      font-family: "Great Vibes", cursive;
+      font-size: 0.20in;
+      line-height: 1;
+      color: #496b4c;
+      letter-spacing: 0.008in;
+    }
+
+    .front .service {
+      position: absolute;
+      top: 1.36in;
+      left: 0.18in;
+      right: 0.18in;
+      text-align: center;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.075in;
+      letter-spacing: 0.036in;
+      text-transform: uppercase;
+      color: #34342f;
+      line-height: 1.28;
+    }
+
+    .front .location {
+      position: absolute;
+      top: 1.54in;
+      left: 0.2in;
+      right: 0.2in;
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.135in;
+      letter-spacing: 0.018in;
+      color: #405d43;
+    }
+
+    .front .contact {
+      position: absolute;
+      left: 0.17in;
+      right: 0.17in;
+      bottom: 0.17in;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.08in;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.073in;
+      color: #303f31;
+      white-space: nowrap;
+    }
+
+    .front .contact strong,
+    .back .contact strong {
+      color: #5a7257;
+      font-weight: 700;
+      letter-spacing: 0.006in;
+    }
+
+    .pipe {
+      color: #879a82;
+    }
+
+    /* BACK */
+
+    .back .title {
+      position: absolute;
+      top: 0.17in;
+      left: 0.14in;
+      right: 0.14in;
+      margin: 0;
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 0.265in;
+      line-height: 0.9;
+      font-weight: 500;
+      letter-spacing: 0.008in;
+      color: #314f35;
+    }
+
+    .back .title-divider {
+      position: absolute;
+      top: 0.52in;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.25in;
+    }
+
+    .back .hook {
+      position: absolute;
+      top: 0.64in;
+      left: 0.28in;
+      right: 0.28in;
+      margin: 0;
+      text-align: center;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.085in;
+      line-height: 1.3;
+      color: #2f302c;
+    }
+
+    .back .qr {
+      position: absolute;
+      left: 0.82in;
+      top: 0.93in;
+      width: 0.76in;
+      height: 0.76in;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 0.025in;
+      border: 0.8px solid #9cab95;
+      border-radius: 0.035in;
+    }
+
+    .back .scan {
+      position: absolute;
+      left: 1.74in;
+      top: 1.13in;
+      width: 0.88in;
+      text-align: center;
+      font-family: "Great Vibes", cursive;
+      font-size: 0.22in;
+      color: #405d43;
+      line-height: 1;
+    }
+
+    .back .bottom-line {
+      position: absolute;
+      left: 0.3in;
+      right: 0.3in;
+      bottom: 0.39in;
+      height: 1px;
+      background: #9cab95;
+    }
+
+    .back .contact {
+      position: absolute;
+      left: 0.17in;
+      right: 0.17in;
+      bottom: 0.17in;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.075in;
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: 0.071in;
+      color: #303f31;
+      white-space: nowrap;
+    }
+
+    @media screen {
+      body {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .card {
+        box-shadow: 0 10px 32px rgba(0,0,0,0.32);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- FRONT -->
+  <section class="card front">
+    <div class="inner">
+
+      <img class="logo-left" src="SueLongLOGO.png" alt="">
+      <img class="logo-right" src="SueLongLOGO.png" alt="">
+
+      <img class="photo" src="Sue headshot.png" alt="">
+
+      <h1 class="name">Sue Long,<span class="cred">LMT</span></h1>
+
+      <div class="name-divider">
+        <div class="divider"></div>
+      </div>
+
+      <div class="script">Relax • Restore • Rebalance</div>
+
+      <div class="service">Therapeutic Massage &amp; Wellness</div>
+
+      <div class="location">Exton, PA</div>
+
+      <div class="contact">
+        <span><strong>IG</strong> @SueLongLMT</span>
+        <span class="pipe">|</span>
+        <span><strong>Email</strong> hello@massageatbalance.com</span>
+      </div>
+
+      <div class="powered">Powered by MaxAmp Marketing</div>
+
+    </div>
+  </section>
+
+  <!-- BACK -->
+  <section class="card back">
+    <div class="inner">
+
+      <h1 class="title">Join Sue’s VIP Wellness List</h1>
+
+      <div class="title-divider">
+        <div class="divider"></div>
+      </div>
+
+      <p class="hook">
+        Be first to hear about special offers, openings, and self-care tips.
+      </p>
+
+      <img class="qr" src="qr-code.png" alt="">
+
+      <div class="scan">Scan to join</div>
+
+      <div class="bottom-line"></div>
+
+      <div class="contact">
+        <span><strong>IG</strong> @SueLongLMT</span>
+        <span class="pipe">•</span>
+        <span><strong>Email</strong> hello@massageatbalance.com</span>
+      </div>
+
+      <div class="powered">Powered by MaxAmp Marketing</div>
+
+    </div>
+  </section>
+
+</body>
+</html>
